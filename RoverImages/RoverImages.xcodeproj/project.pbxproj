@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B46572B289DFFBA003BFAC2 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46572A289DFFBA003BFAC2 /* Model.swift */; };
+		8B46572D289E0115003BFAC2 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B46572C289E0115003BFAC2 /* Network.swift */; };
 		8B56AC5B289DDBA9007BC35E /* RoverImagesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56AC5A289DDBA9007BC35E /* RoverImagesApp.swift */; };
 		8B56AC5D289DDBA9007BC35E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B56AC5C289DDBA9007BC35E /* ContentView.swift */; };
 		8B56AC5F289DDBAA007BC35E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B56AC5E289DDBAA007BC35E /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B46572A289DFFBA003BFAC2 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8B46572C289E0115003BFAC2 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8B56AC57289DDBA9007BC35E /* RoverImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoverImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B56AC5A289DDBA9007BC35E /* RoverImagesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoverImagesApp.swift; sourceTree = "<group>"; };
 		8B56AC5C289DDBA9007BC35E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,9 +56,11 @@
 			isa = PBXGroup;
 			children = (
 				8B56AC5A289DDBA9007BC35E /* RoverImagesApp.swift */,
+				8B46572C289E0115003BFAC2 /* Network.swift */,
 				8B56AC5C289DDBA9007BC35E /* ContentView.swift */,
 				8B56AC5E289DDBAA007BC35E /* Assets.xcassets */,
 				8B56AC60289DDBAA007BC35E /* Preview Content */,
+				8B46572A289DFFBA003BFAC2 /* Model.swift */,
 			);
 			path = RoverImages;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B46572B289DFFBA003BFAC2 /* Model.swift in Sources */,
 				8B56AC5D289DDBA9007BC35E /* ContentView.swift in Sources */,
+				8B46572D289E0115003BFAC2 /* Network.swift in Sources */,
 				8B56AC5B289DDBA9007BC35E /* RoverImagesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
