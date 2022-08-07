@@ -1,2 +1,2 @@
 # RoverImages
-A collection of the images taken my NASA rovers
+A collection of the images taken by NASA rovers
