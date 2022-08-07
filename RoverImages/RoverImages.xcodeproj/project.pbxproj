@@ -44,9 +44,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B465736289F5C53003BFAC2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B56AC5C289DDBA9007BC35E /* ContentView.swift */,
+				8B46572E289F3705003BFAC2 /* RoverDetail.swift */,
+				8B465730289F3C1B003BFAC2 /* ImageList.swift */,
+				8B465732289F3C2C003BFAC2 /* ImageRow.swift */,
+				8B465734289F49E0003BFAC2 /* MainView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B465737289F6631003BFAC2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B46572A289DFFBA003BFAC2 /* Model.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B465738289F8178003BFAC2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8B46572C289E0115003BFAC2 /* Network.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8B56AC4E289DDBA9007BC35E = {
 			isa = PBXGroup;
 			children = (
+				8B56AC5A289DDBA9007BC35E /* RoverImagesApp.swift */,
 				8B56AC59289DDBA9007BC35E /* RoverImages */,
 				8B56AC58289DDBA9007BC35E /* Products */,
 			);
@@ -63,16 +92,11 @@
 		8B56AC59289DDBA9007BC35E /* RoverImages */ = {
 			isa = PBXGroup;
 			children = (
-				8B56AC5A289DDBA9007BC35E /* RoverImagesApp.swift */,
-				8B46572C289E0115003BFAC2 /* Network.swift */,
-				8B56AC5C289DDBA9007BC35E /* ContentView.swift */,
+				8B465738289F8178003BFAC2 /* Resources */,
+				8B465737289F6631003BFAC2 /* ViewModel */,
+				8B465736289F5C53003BFAC2 /* View */,
 				8B56AC5E289DDBAA007BC35E /* Assets.xcassets */,
 				8B56AC60289DDBAA007BC35E /* Preview Content */,
-				8B46572A289DFFBA003BFAC2 /* Model.swift */,
-				8B46572E289F3705003BFAC2 /* RoverDetail.swift */,
-				8B465730289F3C1B003BFAC2 /* ImageList.swift */,
-				8B465732289F3C2C003BFAC2 /* ImageRow.swift */,
-				8B465734289F49E0003BFAC2 /* MainView.swift */,
 			);
 			path = RoverImages;
 			sourceTree = "<group>";
