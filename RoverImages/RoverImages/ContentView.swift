@@ -9,23 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
-        VStack {
-            Image("rover")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(Circle())
-                .overlay {
-                    Circle().stroke(.white, lineWidth: 6)
-                }
-                .shadow(radius: 10)
-            Text("Opportunity")
-            Text("Spirit")
-            Spacer()
-        }
-        .padding()
-       
+        Text("hello world")
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
