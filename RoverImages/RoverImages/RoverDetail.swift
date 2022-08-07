@@ -8,47 +8,62 @@
 import SwiftUI
 
 struct RoverDetail: View {
+    var rover: Rover
+    
     var body: some View {
-        VStack {
-            //need to ignore top safe area and move the rest of the components up a bit
-            Image("rover")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .shadow(radius: 20)
-                .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 450, alignment: .top)
-                .edgesIgnoringSafeArea(.top)
-                .clipped()
-            Text("Rover Name")
-                .font(.headline)
-            HStack() {
-                Text("date launched")
+            VStack {
+                //need to ignore top safe area and move the rest of the components up a bit
+                Image("rover")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .shadow(radius: 20)
+                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 400, alignment: .top)
+                    .clipped()
+                Text(rover.name)
+                    .font(.headline)
+                HStack() {
+                    Text(rover.landing_date)
+                    Spacer()
+                    Text(rover.launch_date)
+                }
+                .padding()
+                Text(rover.status)
+                    .multilineTextAlignment(.leading)
+                    .padding(.bottom)
                 Spacer()
-                Text("date inactive")
-            }
-            .padding()
-            Text("description")
-            Spacer()
-            HStack {
-                Button("Camera 1") {
-                            print("camera 1 gallery")
-                }
-                Button("Camera 2") {
-                            print("camera 2 gallery")
-                }
-                Button("Camera 3") {
-                            print("camera 3 gallery")
-                }
-                Button("Camera 4") {
-                            print("camera 4 gallery")
+                
+                
+                HStack {
+                    NavigationLink(destination: ImageList(camera: "FHAZ")) {
+                        Text("FHAZ")
+                    }
+                    
+                    NavigationLink(destination: ImageList(camera: "RHAZ")) {
+                        Text("RHAZ")
+                    }
                 }
             }
         }
-        
-    }
 }
 
 struct RoverDetail_Previews: PreviewProvider {
     static var previews: some View {
-        RoverDetail()
+        let curiosity = Rover(id: 1, name: "Curiosity", landing_date: "02/27/1991", launch_date: "TBD", status: "Active")
+
+        RoverDetail(rover: curiosity)
     }
 }
+
+
+/*
+ Abbrev.   Camera                         Curiosity    Opportunity    Spirit
+ FHAZ      Front Hazard Avoidance Camera      ✔             ✔           ✔
+ RHAZ      Rear Hazard Avoidance Camera       ✔             ✔           ✔
+ MAST      Mast Camera                        ✔
+ CHEMCAM   Chemistry and Camera Complex       ✔
+ MAHLI     Mars Hand Lens Imager              ✔
+ MARDI     Mars Descent Imager                ✔
+ NAVCAM    Navigation Camera                  ✔             ✔           ✔
+ PANCAM    Panoramic Camera                   ✔             ✔
+ MINITES   Miniature Thermal Emission Spectrometer          ✔           ✔
+*/
