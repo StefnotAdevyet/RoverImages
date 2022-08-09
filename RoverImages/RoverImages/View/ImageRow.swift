@@ -8,10 +8,15 @@
 import SwiftUI
 
 struct ImageRow: View {
+    var photo: Photo?
     var body: some View {
         
         HStack {
-            Text("Picture")
+            Text(photo?.rover.name ?? "null")
+            Spacer()
+            Text(photo?.camera.name ?? "null")
+            Spacer()
+            Text(photo?.earth_date ?? "null")
         }
     }
 }

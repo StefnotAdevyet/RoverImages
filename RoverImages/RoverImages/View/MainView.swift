@@ -11,42 +11,39 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var network: Network
     
-   
-    
-    var curiosity = Rover(id: 1, name: "Curiosity", landing_date: "02/27/1991", launch_date: "TBD", status: "Active")
-    
-    var spirit = Rover(id: 2, name: "Spirit", landing_date: "02/27/1991", launch_date: "TBD", status: "Inactive")
-    
-    var opportunity = Rover(id: 3, name: "Opportunity", landing_date: "02/27/1991", launch_date: "TBD", status: "Inactive")
-    
     var body: some View {
+        let mainImage = network.mainPhoto?.img_src ?? "image not available"
+
         NavigationView {
             VStack {
-                Image("earth")
-                    .resizable()
-                    .frame(width:300, height: 300)
-                NavigationLink(destination: RoverDetail(rover: curiosity)) {
-                    Text(network.mainPhoto?.img_src ?? "image not available")
+                AsyncImage(url: URL(string: mainImage)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Text("image loading")
+                }
+                .frame(width: 300, height: 300)
+
+                NavigationLink(destination: RoverDetail(rover: "Curiosity")) {
+                    Text("Curiosity")
                 }.padding()
-                    .onAppear {
-                        network.getPhotos()
-                        
-                    }
-                
                 HStack {
-                    NavigationLink(destination: RoverDetail(rover: spirit)) {
-                        Text(spirit.name)
+                    NavigationLink(destination: RoverDetail(rover: "Spirit")) {
+                        Text("Spirit")
                     }
                     Spacer()
-                    NavigationLink(destination: RoverDetail(rover: opportunity)) {
-                        Text(opportunity.name)
+                    NavigationLink(destination: RoverDetail(rover: "Opportunity")) {
+                        Text("Opportunity")
                     }
                 }
                 Spacer()
             }
             .navigationTitle("NASA Rovers")
             .padding()
+            .onAppear {
+                network.getPhotos()
+            }
         }
+        .navigationViewStyle(.stack)
     }
     
     

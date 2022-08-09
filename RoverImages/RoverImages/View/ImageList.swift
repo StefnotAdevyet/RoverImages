@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct ImageList: View {
+    @EnvironmentObject var network: Network
     var camera: String = "camera not available"
     var body: some View {
-            List {
-                ImageRow()
-            }.navigationTitle(camera)
+        ScrollView {
+            ForEach(network.photos) { photo in
+                ImageRow(photo: photo)
+            }
+        }
+        .padding()
+        .onAppear {
+            network.getPhotos()
+            print(network.photos.count)
+        }
     }
-    }
+}
 
 
 struct ImageList_Previews: PreviewProvider {

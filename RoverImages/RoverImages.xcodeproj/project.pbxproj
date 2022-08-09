@@ -31,6 +31,7 @@
 		8B56AC5C289DDBA9007BC35E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8B56AC5E289DDBAA007BC35E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B56AC61289DDBAA007BC35E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B95B86128A318F90049BD4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 		8B56AC59289DDBA9007BC35E /* RoverImages */ = {
 			isa = PBXGroup;
 			children = (
+				8B95B86128A318F90049BD4C /* Info.plist */,
 				8B465738289F8178003BFAC2 /* Resources */,
 				8B465737289F6631003BFAC2 /* ViewModel */,
 				8B465736289F5C53003BFAC2 /* View */,
@@ -317,6 +319,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RoverImages/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoverImages/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -345,6 +348,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"RoverImages/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RoverImages/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

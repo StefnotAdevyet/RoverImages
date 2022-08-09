@@ -7,7 +7,9 @@
 
 import Foundation
 
-let urlStr = "https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=1&api_key=DEMO_KEY"
+let apiKey = "DnLuowFcN9OcxQowIRhuATo1MtasRciSQdXJnOkP"
+
+let urlStr = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-6-3&api_key=DnLuowFcN9OcxQowIRhuATo1MtasRciSQdXJnOkP"
 
 
 class Network: ObservableObject {
@@ -41,6 +43,7 @@ class Network: ObservableObject {
         }
         dataTask.resume()
     }
+    
     
     
 }

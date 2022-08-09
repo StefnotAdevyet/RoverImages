@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct RoverImagesApp: App {
     var network = Network()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

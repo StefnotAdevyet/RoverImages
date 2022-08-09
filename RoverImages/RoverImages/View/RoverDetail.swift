@@ -8,24 +8,24 @@
 import SwiftUI
 
 struct RoverDetail: View {
-    var rover: Rover
+    var rover: String
     
     var body: some View {
             VStack {
                 //need to ignore top safe area and move the rest of the components up a bit
-                Image("rover")
+                Image(rover)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .shadow(radius: 20)
                     .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 400, alignment: .top)
                     .clipped()
                 HStack() {
-                    Text(rover.landing_date)
+                    Text("rover.landing_date")
                     Spacer()
-                    Text(rover.launch_date)
+                    Text("rover.launch_date")
                 }
                 .padding()
-                Text(rover.status)
+                Text("rover.status")
                     .multilineTextAlignment(.leading)
                     .padding(.bottom)
                 Spacer()
@@ -41,7 +41,7 @@ struct RoverDetail: View {
                     }
                 }
             }
-            .navigationTitle(rover.name)
+            .navigationTitle(rover)
         }
         
 }
@@ -50,7 +50,7 @@ struct RoverDetail_Previews: PreviewProvider {
     static var previews: some View {
         let curiosity = Rover(id: 1, name: "Curiosity", landing_date: "02/27/1991", launch_date: "TBD", status: "Active")
 
-        RoverDetail(rover: curiosity)
+        RoverDetail(rover: "test")
     }
 }
 
