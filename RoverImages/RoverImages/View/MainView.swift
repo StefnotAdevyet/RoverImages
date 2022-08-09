@@ -18,18 +18,24 @@ struct MainView: View {
     
     var body: some View {
         NavigationView {
-            HStack {
-            NavigationLink(destination: RoverDetail(rover: curiosity)) {
-                Text(curiosity.name)
-            }
-            Spacer()
-            NavigationLink(destination: RoverDetail(rover: spirit)) {
-                Text(spirit.name)
-            }
-            Spacer()
-            NavigationLink(destination: RoverDetail(rover: opportunity)) {
-                Text(opportunity.name)
-            }
+            VStack {
+                Image("earth")
+                    .resizable()
+                    .frame(width:300, height: 300)
+                NavigationLink(destination: RoverDetail(rover: curiosity)) {
+                    Text(curiosity.name)
+                }
+                Spacer()
+                HStack {
+                    NavigationLink(destination: RoverDetail(rover: spirit)) {
+                        Text(spirit.name)
+                    }
+                    Spacer()
+                    NavigationLink(destination: RoverDetail(rover: opportunity)) {
+                        Text(opportunity.name)
+                    }
+                }
+                Spacer()
             }
             .padding()
         }
