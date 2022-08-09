@@ -13,7 +13,7 @@ struct Feed: Codable {
     var photos: [Photo]
 }
 
-struct Photo: Codable {
+struct Photo: Codable, Identifiable {
     var id: Int
     var sol: Int
     var camera: Camera

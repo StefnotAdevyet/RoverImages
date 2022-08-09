@@ -19,8 +19,6 @@ struct RoverDetail: View {
                     .shadow(radius: 20)
                     .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 400, alignment: .top)
                     .clipped()
-                Text(rover.name)
-                    .font(.headline)
                 HStack() {
                     Text(rover.landing_date)
                     Spacer()
@@ -43,7 +41,9 @@ struct RoverDetail: View {
                     }
                 }
             }
+            .navigationTitle(rover.name)
         }
+        
 }
 
 struct RoverDetail_Previews: PreviewProvider {

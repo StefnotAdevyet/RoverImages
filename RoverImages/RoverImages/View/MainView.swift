@@ -9,6 +9,9 @@ import SwiftUI
 
 
 struct MainView: View {
+    @EnvironmentObject var network: Network
+    
+   
     
     var curiosity = Rover(id: 1, name: "Curiosity", landing_date: "02/27/1991", launch_date: "TBD", status: "Active")
     
@@ -23,9 +26,13 @@ struct MainView: View {
                     .resizable()
                     .frame(width:300, height: 300)
                 NavigationLink(destination: RoverDetail(rover: curiosity)) {
-                    Text(curiosity.name)
-                }
-                Spacer()
+                    Text(network.mainPhoto?.img_src ?? "image not available")
+                }.padding()
+                    .onAppear {
+                        network.getPhotos()
+                        
+                    }
+                
                 HStack {
                     NavigationLink(destination: RoverDetail(rover: spirit)) {
                         Text(spirit.name)
@@ -37,9 +44,13 @@ struct MainView: View {
                 }
                 Spacer()
             }
+            .navigationTitle("NASA Rovers")
             .padding()
         }
     }
+    
+    
+    
 }
 
 struct MainView_Previews: PreviewProvider {
