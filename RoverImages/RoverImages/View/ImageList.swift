@@ -29,6 +29,7 @@ struct ImageList: View {
 
 struct ImageList_Previews: PreviewProvider {
     static var previews: some View {
-        ImageList()
+        ImageList(camera: "HVAZ", roverName: "Curiosity")
+            .environmentObject(Network())
     }
 }

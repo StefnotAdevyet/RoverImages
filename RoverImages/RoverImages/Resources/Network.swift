@@ -36,8 +36,8 @@ class Network: ObservableObject {
                 DispatchQueue.main.async {
                     do {
                         let decodedJSON = try JSONDecoder().decode(Feed.self, from: data)
-                        print(urlStr)
                         self.photos = decodedJSON.photos
+                        self.mainPhoto = self.photos.first
                     } catch let error  {
                         print(error)
                     }
