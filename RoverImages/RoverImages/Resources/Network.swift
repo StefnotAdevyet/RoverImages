@@ -9,22 +9,15 @@ import Foundation
 
 let apiKey = "DnLuowFcN9OcxQowIRhuATo1MtasRciSQdXJnOkP"
 
-
-
-
 class Network: ObservableObject {
     @Published var photos: [Photo] = []
-    
     @Published var mainPhoto: Photo?
     
     func getPhotos(urlStr: String) {
-        
         guard let url = URL(string: urlStr) else {
             print("url error")
             return
         }
-        
-        
         let urlRequest = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
@@ -46,7 +39,4 @@ class Network: ObservableObject {
         }
         dataTask.resume()
     }
-    
-    
-    
 }

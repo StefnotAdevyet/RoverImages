@@ -61,7 +61,6 @@ struct RoverDetail: View {
 
 struct RoverDetail_Previews: PreviewProvider {
     static var previews: some View {
-        let curiosity = Rover(id: 1, name: "Curiosity", landing_date: "02/27/1991", launch_date: "TBD", status: "Active")
 
         RoverDetail(roverName: "Curiosity",roverPhoto: "Curiosity", launchDate: "November 26, 2011", landingDate: "-Present", status: "Active")
     }
