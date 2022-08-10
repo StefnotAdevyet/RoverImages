@@ -9,7 +9,7 @@ import Foundation
 
 let apiKey = "DnLuowFcN9OcxQowIRhuATo1MtasRciSQdXJnOkP"
 
-let urlStr = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2021-6-3&api_key=DnLuowFcN9OcxQowIRhuATo1MtasRciSQdXJnOkP"
+
 
 
 class Network: ObservableObject {
@@ -17,11 +17,14 @@ class Network: ObservableObject {
     
     @Published var mainPhoto: Photo?
     
-    func getPhotos() {
+    func getPhotos(urlStr: String) {
+        
         guard let url = URL(string: urlStr) else {
             print("url error")
             return
         }
+        
+        
         let urlRequest = URLRequest(url: url)
         let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let error = error {
@@ -33,8 +36,8 @@ class Network: ObservableObject {
                 DispatchQueue.main.async {
                     do {
                         let decodedJSON = try JSONDecoder().decode(Feed.self, from: data)
+                        print(urlStr)
                         self.photos = decodedJSON.photos
-                        self.mainPhoto = self.photos[0]
                     } catch let error  {
                         print(error)
                     }

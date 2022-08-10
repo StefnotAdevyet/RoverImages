@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var network: Network
+    var currentTime = Date().displayFormat
     
     var body: some View {
         let mainImage = network.mainPhoto?.img_src ?? "image not available"
@@ -23,24 +24,26 @@ struct MainView: View {
                 }
                 .frame(width: 300, height: 300)
 
-                NavigationLink(destination: RoverDetail(rover: "Curiosity")) {
+                NavigationLink(destination: RoverDetail(roverName: "Curiosity",roverPhoto: "Curiosity", launchDate: "November 26, 2011", landingDate: "-Present", status: "Active")) {
                     Text("Curiosity")
                 }.padding()
                 HStack {
-                    NavigationLink(destination: RoverDetail(rover: "Spirit")) {
+                    NavigationLink(destination: RoverDetail(roverName: "Spirit", roverPhoto: "Spirit", launchDate: "June 10, 2003", landingDate: "May 25, 2011", status: "Inactive")) {
                         Text("Spirit")
                     }
                     Spacer()
-                    NavigationLink(destination: RoverDetail(rover: "Opportunity")) {
+                    NavigationLink(destination: RoverDetail(roverName: "Opportunity", roverPhoto: "Opportunity", launchDate: "July 8, 2003", landingDate: "February 13, 2019", status: "Inactive")) {
                         Text("Opportunity")
                     }
                 }
                 Spacer()
+                Text(currentTime)
+                    .font(.footnote)
             }
             .navigationTitle("NASA Rovers")
             .padding()
             .onAppear {
-                network.getPhotos()
+                //network.getPhotos()
             }
         }
         .navigationViewStyle(.stack)
@@ -53,5 +56,18 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(Network())
+    }
+}
+
+extension Date {
+    var displayFormat: String {
+        self.formatted(
+            .dateTime
+                .month(.defaultDigits)
+                .day(.defaultDigits)
+                .year(.twoDigits)
+        )
+        .replacingOccurrences(of: "/", with: "-")
     }
 }

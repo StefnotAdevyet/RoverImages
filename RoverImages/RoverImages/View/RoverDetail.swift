@@ -8,40 +8,53 @@
 import SwiftUI
 
 struct RoverDetail: View {
-    var rover: String
+    var roverName: String
+    var roverPhoto: String
+    var launchDate: String
+    var landingDate: String
+    var status: String
+    
+    
     
     var body: some View {
+        
             VStack {
                 //need to ignore top safe area and move the rest of the components up a bit
-                Image(rover)
+                Image(roverPhoto)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .shadow(radius: 20)
                     .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 400, alignment: .top)
                     .clipped()
+                
                 HStack() {
-                    Text("rover.landing_date")
+                    Text(launchDate)
                     Spacer()
-                    Text("rover.launch_date")
+                    Text(landingDate)
                 }
                 .padding()
-                Text("rover.status")
+                Text(status)
                     .multilineTextAlignment(.leading)
                     .padding(.bottom)
+                Text("Some sort of intro/history of the aforementioned rover")
                 Spacer()
                 
                 
                 HStack {
-                    NavigationLink(destination: ImageList(camera: "FHAZ")) {
+                    NavigationLink(destination: ImageList(camera: "FHAZ", roverName: roverPhoto)) {
                         Text("FHAZ")
                     }
                     
-                    NavigationLink(destination: ImageList(camera: "RHAZ")) {
+                    NavigationLink(destination: ImageList(camera: "RHAZ", roverName: roverPhoto)) {
                         Text("RHAZ")
+                    }
+                    
+                    NavigationLink(destination: ImageList(camera: "NAVCAM", roverName: roverPhoto)) {
+                        Text("NAVCAM")
                     }
                 }
             }
-            .navigationTitle(rover)
+            .navigationTitle(roverPhoto)
         }
         
 }
@@ -50,7 +63,7 @@ struct RoverDetail_Previews: PreviewProvider {
     static var previews: some View {
         let curiosity = Rover(id: 1, name: "Curiosity", landing_date: "02/27/1991", launch_date: "TBD", status: "Active")
 
-        RoverDetail(rover: "test")
+        RoverDetail(roverName: "Curiosity",roverPhoto: "Curiosity", launchDate: "November 26, 2011", landingDate: "-Present", status: "Active")
     }
 }
 

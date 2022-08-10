@@ -37,6 +37,18 @@ struct Rover: Codable {
     var status: String
 }
 
+struct RoverDetailModel {
+    var launchDate: String
+    var landingDate: String
+    var status: String
+    var image: String
+    var name: String
+}
+
+
+
+
+
 
 
 /*{
